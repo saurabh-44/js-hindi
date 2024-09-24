@@ -20,9 +20,9 @@ for (const greet of greetings) {
 
 
 /*-----------------------------------Maps------------------------------------/
+=>  JavaScript built-in data structure.
 =>  object which holds key-value pairs and remembers the original insertion order of the keys.
-=>  is used to apply a function to each element of an array and return a new array with the results. 
-=>  It transforms each element in the array using the callback function and returns a new array of the same length.      */
+=>  both keys and values can be of any type (objects, strings, numbers, etc.).    */
 const map = new Map()
 map.set('IN', "India")    // key => IN, value => India
 map.set('USA', "United States of America")
@@ -35,11 +35,11 @@ for (const [key, value] of map) {   // print with key value pair
 }
 
 
-/*-----------------------------Map with object-------------------------------*/
+/*-----------------------------for...of with plain object-------------------------------*/
 const myObject = {
     game1: 'NFS',
     game2: 'Spiderman'
 }
-for (const [key, value] of myObject) {       // object is not iteratable with map function
+for (const [key, value] of myObject) {       //  for...of cannot be used directly on plain objects it can be executable on Map objects
     console.log(key, ':-', value);
 }

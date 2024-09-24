@@ -1,32 +1,33 @@
-// Dates
-
+/*-----------------------------------------------Dates-------------------------------------------------*/
 let myDate = new Date()
-// console.log(myDate.toString());
-// console.log(myDate.toDateString());
-// console.log(myDate.toLocaleString());
-// console.log(typeof myDate);
+console.log(myDate.toString());               // today's date with time
+console.log(myDate.toDateString());           // only date
+console.log(myDate.toLocaleString());         // normal date with time
+console.log(typeof myDate);                   // object
 
-// let myCreatedDate = new Date(2023, 0, 23)
-// let myCreatedDate = new Date(2023, 0, 23, 5, 3)
-// let myCreatedDate = new Date("2023-01-14")
-let myCreatedDate = new Date("01-14-2023")
-// console.log(myCreatedDate.toLocaleString());
 
-let myTimeStamp = Date.now()
+/*-----------------------------------------------Example-1-------------------------------------------------*/
+let myCreatedDate = new Date(2023, 0, 23)              // 23/1/2023, 12:00:00 am
+let myCreatedDate = new Date(2023, 0, 23, 5, 3)        // 23/1/2023, 5:03:00 am
+let myCreatedDate = new Date("2023-01-14")             // 14/1/2023, 5:30:00 am
+let myCreatedDate = new Date("01-14-2023")             // 14/1/2023, 12:00:00 am
+console.log(myCreatedDate.toLocaleString());
 
-// console.log(myTimeStamp);
-// console.log(myCreatedDate.getTime());
-// console.log(Math.floor(Date.now()/1000));
 
+/*-----------------------------------------------Example-2-------------------------------------------------*/
+let myTimeStamp = Date.now()              
+console.log(myTimeStamp);                   // 1727189075250
+console.log(myCreatedDate.getTime());       // 1674412200000
+console.log(Math.floor(Date.now()/1000));   // 1727189075
+
+
+/*-----------------------------------------------Example-3-------------------------------------------------*/
 let newDate = new Date()
-console.log(newDate);
-console.log(newDate.getMonth() + 1);
-console.log(newDate.getDay());
-
-// `${newDate.getDay()} and the time `
+console.log(newDate);                    // 2024-09-24T14:46:09.341Z
+console.log(newDate.getMonth() + 1);     // 9
+console.log(newDate.getDay());           // 2
 
 newDate.toLocaleString('default', {
     weekday: "long",
-    
 })
 

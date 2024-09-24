@@ -1,17 +1,11 @@
-const coding = ["js", "ruby", "java", "python", "cpp"]
-const values = coding.forEach( (item) => {                  // forEach does not return any value 
-    console.log(item);
-    return item
-} )
-console.log(values);
-
+/*----------------------------------filter----------------------------------*/
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const newNums = myNums.filter( (num) => {       // filter returns a value
-    return num > 4          // if we write within a scope then we have to write return keyword
+    return num > 4                              // if we write within a scope then we have to write return keyword
 } )
 
 
-// 2nd method with forEach
+/*-------------------------2nd method with forEach--------------------------*/
 const newNums = []
 myNums.forEach( (num) => {
     if (num > 4) {
@@ -21,6 +15,7 @@ myNums.forEach( (num) => {
 console.log(newNums);
 
 
+/*--------------------------------Example----------------------------------*/
 const books = [
     { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
     { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
@@ -32,10 +27,8 @@ const books = [
     { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
     { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
   ];
-
-  let userBooks = books.filter( (bk) => bk.genre === 'History')
-
-  userBooks = books.filter( (bk) => { 
+  let userBooks = books.filter( (bk) => bk.genre === 'History')    
+  userBooks = books.filter( (bk) => {                                  // 2nd mehtod
     return bk.publish >= 1995 && bk.genre === "History"
 })
   console.log(userBooks);

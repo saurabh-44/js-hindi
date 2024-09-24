@@ -1,4 +1,6 @@
-/*-------------------------------this keyword------------------------------*/
+/*-------------------------------this keyword------------------------------
+=> always refers to current context like from where it points.
+=> when we print this within vs code globally then it will show empty object but when we print on console then it will refers to the window    */
 const user = {
     username: "hitesh",
     price: 999,

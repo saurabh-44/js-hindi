@@ -14,11 +14,20 @@ coding.forEach( (item) => {             // with arrow function
 } )
 
 
-// 2nd method
+/*--------------------------2nd method------------------------------*/
 function printMe(item){
     console.log(item);
 }
 coding.forEach(printMe)
+
+
+/*--------------------forEach does not return any value------------*/
+const values = coding.forEach( (item) => {                 
+    console.log(item);
+    return item
+} )
+console.log(values);           
+
 
 /*------------------------------------forEach with index----------------------------------*/
 const coding1 = ["js", "ruby", "java", "python", "cpp"]
@@ -42,7 +51,6 @@ const myCoding = [
         languageFileName: "py"
     },
 ]
-
 myCoding.forEach( (item) => {       // item indicates the object within the array and all the object tends to item and we can access the object with it
     console.log(item.languageName);
 } )

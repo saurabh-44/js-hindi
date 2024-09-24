@@ -25,6 +25,8 @@ if (Object.keys(emptyObj).length === 0) {
 
 
 /*-----------Nullish Coalescing Operator (??): null undefined----------*/
+/*operator returns the right-hand side value if the left-hand side value is null or undefined. 
+Otherwise, it returns the left-hand side value.*/
 let val2 = 5 ?? 10          // it means val2 have 2 values 5 and 10 but 1st value will execute 
 let val3 = null ?? 10       // here 10 will execute
 let val4 = undefined ?? 15  // here 15 will execute

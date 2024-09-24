@@ -1,5 +1,3 @@
-"use strict"; // treat all JS code as newer version
-
 console.log("Hello bro");    // automatically new line come after printing
 console.log(3+4);            // addition => 7
 console.log("3+4",3,"4"+5);  // 3+4 3 45

@@ -10,17 +10,17 @@
     
 </body>
 <script>
-    const div = document.createElement('div')
-    console.log(div);
-    div.className = "main"
-    div.id = Math.round(Math.random() * 10 + 1)
-    div.setAttribute("title", "generated title")
-    div.style.backgroundColor = "green"
+    const div = document.createElement('div')      // div will create => but in the memory not on page that's why it is not visible on page
+    console.log(div);                              
+    div.className = "main"                         // className = 'main'
+    div.id = Math.round(Math.random() * 10 + 1)    // Random id
+    div.setAttribute("title", "generated title")   
+    div.style.backgroundColor = "green"            
     div.style.padding = "12px"
-    // div.innerText = "Chai aur code"
+    // div.innerText = "Chai aur code"              // it is not preffer bec of override
     const addText = document.createTextNode("Chai aur code")
-    div.appendChild(addText)
+    div.appendChild(addText)                        // Text added to div
 
-    document.body.appendChild(div)
+    document.body.appendChild(div)                  // added to document
 </script>
 </html>

@@ -10,17 +10,21 @@
     <button id="stop">Stop</button>
 </body>
 <script>
+    /*--------------------------------------------------serTimeout------------------------------------------------
+    => Mehtod which can call api
+    => it is not a part of core javascript it comes from browser and when it call then it goes to web api and comes from event queue*/
     const sayHitesh = function(){
         console.log("Hitesh");
     }
     const changeText = function(){
         document.querySelector('h1').innerHTML = "best JS series"
     }
+    const changeMe = setTimeout(changeText, 2000)   // function will call after 2 second  
 
-    const changeMe = setTimeout(changeText, 2000)
 
+/*--------------------------------------------------clearTimeout------------------------------------------------*/
     document.querySelector('#stop').addEventListener('click', function(){
-        clearTimeout(changeMe)
+        clearTimeout(changeMe)                // within 2 second if the function will call then setTimeout will not execute
         console.log("STOPPED")
     })
 </script>

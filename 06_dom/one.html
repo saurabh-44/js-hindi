@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <title>DOM learning</title>
     <style>
         .bg-black{
@@ -27,5 +26,55 @@
             <li class="list-item">four</li>
         </ul>
     </div>
+    <script>
+        document.getElementById('title').id   // it means 1st select by id and then what is the value of id
+        document.getElementById('title').className // will give className
+        document.getElementById('title').getAttribute('class')   // will give what is the value of class attribute
+        document.getElementById('title').setAttribute('class', 'test')  // always override and now value of class will be test
+        document.getElementById('title')
+
+        cons title = document.getElementById('title')
+        title.style.backgroundColor = 'green'
+        title.style.padding = '15px'
+        title.style.borderRadius = '5px'
+
+
+        title.textContent  // shows visible and hidden text also   => DOM learning on Chai aur code test text
+        title.innerHTML    // give complete html value             => DOM learning on Chai aur code <span style="display: none;">test text</span>
+        title.innerText    // only shows visible text              => 'DOM learning on Chai aur code'
+
+        document.getElementByClssName('test')      // html collection will get
+        document.querySelector('h2')               // 1st h2 will get
+
+        document.querySelector('#title')           // can select id with #id
+        document.querySelector('.heading')         // can select class with .className
+        document.querySelector('p:first-child')
+        document.querySelector('input[type= 'password']')
+        
+        const myul = document.querySelector('ul')
+        myul.querySelelctor('li')
+        const turnGreen = myul.querySelector('li')
+        turnGreen.style.backgroundColor = 'green'
+        turnGreen.style.padding = '10px'
+        turnGreen.innerText = 'five'
+
+        
+        const tempLiList = document.querySelectorAll('li')                 // all list will be selected => NodeList 
+        tempLiList.style.color = 'green'                     // can't do directly because in NodeList there are so many elements
+        tempLiList[0].style.color = 'green'
+
+        const myH1 = document.querySelectorAll('h1')
+        myH1[0].style.color = 'green'
+
+        tempLiList.forEach(function (l) {
+            l.style.backgroundColor = 'green'
+        })
+
+        document.getElementsByClassName('list-item')       // HTMLCollection will get and can't access with forEach
+        const myConvertedArray = Array.from(tempClassList)                          // convert into array
+        myConvertedArray.forEach(function(li){
+            li.style.color = 'orange'
+        })
+    </script>
 </body>
 </html>

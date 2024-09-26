@@ -11,10 +11,12 @@
 </body>
 <script>
     /*--------------------------------------------------serTimeout------------------------------------------------
-    => Mehtod which can call api
+    => is a built-in function used to execute a specific piece of code after a certain amount of time (delay).
+    => (1 second = 1000 milliseconds).
+    => Mehtod which can call api and it works asynchronously.
     => it is not a part of core javascript it comes from browser and when it call then it goes to web api and comes from event queue*/
-    const sayHitesh = function(){
-        console.log("Hitesh");
+    const saySaurabh = function(){
+        console.log("Saurabh");
     }
     const changeText = function(){
         document.querySelector('h1').innerHTML = "best JS series"

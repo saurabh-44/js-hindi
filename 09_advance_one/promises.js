@@ -1,36 +1,42 @@
-const promiseOne = new Promise(function(resolve, reject){
+const promiseOne = new Promise(function(resolve, reject){         // promise is an object
     //Do an async task
     // DB calls, cryptography, network
     setTimeout(function(){
         console.log('Async task is compelete');
-        resolve()
+        resolve()      // connect to .then => that means first async task will comlete then promise will come
     }, 1000)
 })
 
-promiseOne.then(function(){
+promiseOne.then(function(){          // .then is directly connected to the resolve
     console.log("Promise consumed");
 })
 
+
+// 2nd method
 new Promise(function(resolve, reject){
     setTimeout(function(){
         console.log("Async task 2");
         resolve()
     }, 1000)
 
-}).then(function(){
+}).then(function(){                                         // it is directly call 
     console.log("Async 2 resolved");
 })
 
+
+// 3rd example in which resolve will send data and .then will take the data
 const promiseThree = new Promise(function(resolve, reject){
     setTimeout(function(){
         resolve({username: "Chai", email: "chai@example.com"})
     }, 1000)
 })
 
-promiseThree.then(function(user){
+promiseThree.then(function(user){                // will take the data from username
     console.log(user);
 })
 
+
+// 4th example
 const promiseFour = new Promise(function(resolve, reject){
     setTimeout(function(){
         let error = true
@@ -42,18 +48,18 @@ const promiseFour = new Promise(function(resolve, reject){
     }, 1000)
 })
 
- promiseFour
- .then((user) => {
+ promiseFour.then((user) => {
     console.log(user);
     return user.username
-}).then((username) => {
+}).then((username) => {                  // will take value from just upper side 
     console.log(username);
 }).catch(function(error){
     console.log(error);
-}).finally(() => console.log("The promise is either resolved or rejected"))
+}).finally(() => console.log("The promise is either resolved or rejected"))     // at the end conversation
 
 
 
+// 5th
 const promiseFive = new Promise(function(resolve, reject){
     setTimeout(function(){
         let error = true
@@ -65,7 +71,7 @@ const promiseFive = new Promise(function(resolve, reject){
     }, 1000)
 });
 
-async function consumePromiseFive(){
+async function consumePromiseFive(){         // 2nd method to take value
     try {
         const response = await promiseFive
         console.log(response);
@@ -73,22 +79,24 @@ async function consumePromiseFive(){
         console.log(error);
     }
 }
-
 consumePromiseFive()
 
-// async function getAllUsers(){
-//     try {
-//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
 
-//         const data = await response.json()
-//         console.log(data);
-//     } catch (error) {
-//         console.log("E: ", error);
-//     }
-// }
+// Example
+async function getAllUsers(){
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
 
-//getAllUsers()
+        const data = await response.json()
+        console.log(data);
+    } catch (error) {
+        console.log("E: ", error);
+    }
+}
+getAllUsers()
 
+
+// fatch 2nd method
 fetch('https://api.github.com/users/hiteshchoudhary')
 .then((response) => {
     return response.json()

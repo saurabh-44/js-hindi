@@ -1,18 +1,20 @@
-const promiseOne = new Promise(function(resolve, reject){         // promise is an object
-    //Do an async task
-    // DB calls, cryptography, network
+/*--------------------------------------------------------------------Promises---------------------------------------------------
+=> a Promise is an object that represents the failure of an asynchronous operation and its resulting value.
+=> Promises are a way to handle asynchronous operations in a more readable and manageable way than traditional callbacks, especially when dealing with 
+multiple async tasks.*/
+const promiseOne = new Promise(function(resolve, reject){     
     setTimeout(function(){
         console.log('Async task is compelete');
         resolve()      // connect to .then => that means first async task will comlete then promise will come
     }, 1000)
 })
 
-promiseOne.then(function(){          // .then is directly connected to the resolve
-    console.log("Promise consumed");
+promiseOne.then(function(){            // .then is directly connected to the resolve
+    console.log("Promise consumed");   // will print after completing the async task
 })
 
 
-// 2nd method
+/*-------------------------------------------Example-2----------------------------------------------------*/
 new Promise(function(resolve, reject){
     setTimeout(function(){
         console.log("Async task 2");
@@ -24,19 +26,20 @@ new Promise(function(resolve, reject){
 })
 
 
-// 3rd example in which resolve will send data and .then will take the data
+/*-------------------------------------------Example-3----------------------------------------------------
+resolve will send data and .then will take the data*/
 const promiseThree = new Promise(function(resolve, reject){
     setTimeout(function(){
         resolve({username: "Chai", email: "chai@example.com"})
     }, 1000)
 })
 
-promiseThree.then(function(user){                // will take the data from username
+promiseThree.then(function(user){                // will take the data from resolve
     console.log(user);
 })
 
 
-// 4th example
+/*-------------------------------------------Example-4----------------------------------------------------*/
 const promiseFour = new Promise(function(resolve, reject){
     setTimeout(function(){
         let error = true
@@ -53,13 +56,12 @@ const promiseFour = new Promise(function(resolve, reject){
     return user.username
 }).then((username) => {                  // will take value from just upper side 
     console.log(username);
-}).catch(function(error){
+}).catch(function(error){                // error will handle here
     console.log(error);
 }).finally(() => console.log("The promise is either resolved or rejected"))     // at the end conversation
 
 
-
-// 5th
+/*-------------------------------------------Example-5----------------------------------------------------*/
 const promiseFive = new Promise(function(resolve, reject){
     setTimeout(function(){
         let error = true
@@ -82,11 +84,9 @@ async function consumePromiseFive(){         // 2nd method to take value
 consumePromiseFive()
 
 
-// Example
 async function getAllUsers(){
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/users')
-
         const data = await response.json()
         console.log(data);
     } catch (error) {
@@ -95,10 +95,10 @@ async function getAllUsers(){
 }
 getAllUsers()
 
-
-// fetch 2nd method => fetch api was there but before 2022 it was not merge with node, it is the global fetch() method startst the promise of fetching a resource
-// from the network returning a promise which js fulfilled once the response is available.
-// fetch has special call back task queue known as microtask queue which will execute before async await
+/*-------------------------------------------2nd- method--------------------------------------------------
+fetch 2nd method => fetch api was there but before 2022 it was not merge with node, it is the global fetch() method startst the promise of fetching a resource
+from the network returning a promise which js fulfilled once the response is available.
+fetch has special call back task queue known as microtask queue which will execute before async await */
 fetch('https://api.github.com/users/hiteshchoudhary')
 .then((response) => {
     return response.json()

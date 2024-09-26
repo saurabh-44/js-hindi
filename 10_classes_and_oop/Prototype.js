@@ -1,3 +1,4 @@
+// javasript has prototype behaviour
 // let myName = "hitesh     "
 // let mychannel = "chai     "
 

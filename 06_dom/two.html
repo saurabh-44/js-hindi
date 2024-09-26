@@ -16,20 +16,25 @@
     </div>
 </body>
 <script>
+    /*-----------------------------------------------------Example-1----------------------------------------------------*/
     const parent = document.querySelector('.parent')
-    console.log(parent);              
+    console.log(parent);              // Entire div will select
     console.log(parent.children);     // HTML collection array like properties
     console.log(parent.children[1].innerHTML);  // Tuesday
 
+
+    /*------------------------------------------------------2nd Method---------------------------------------------------*/
     for (let i = 0; i < parent.children.length; i++) {
          console.log(parent.children[i].innerHTML);
     }
     parent.children[1].style.color = "orange"
-    console.log(parent.firstElementChild);      // Complete child with div
-    console.log(parent.lastElementChild);
+    console.log(parent.firstElementChild);      // 1st child with div
+    console.log(parent.lastElementChild);       // last child with div
 
+
+    /*--------------------------------------------------Child to parent---------------------------------------------------*/
     const dayOne = document.querySelector('.day')
-    console.log(dayOne);
+    console.log(dayOne);                        // with div it will return
     console.log(dayOne.parentElement);          // move to parent element
     console.log(dayOne.nextElementSibling);     // next Element
 

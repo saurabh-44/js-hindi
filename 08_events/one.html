@@ -20,14 +20,10 @@
 </body>
 <script>
     /*---------------------------------------------Events---------------------------------------------------
+    => any action or occurrence that happens in the browser that JavaScript can respond to.
+    => are used to make a webpage interactive by allowing the browser to detect user actions, system updates, or other changes.
     => In javascript all type of events run in a sequence
     => Exception - async, some activeiy */
-    document.getElementById('owl').onclick = function(){             // features are low
-        alert("owl clicked")
-    }
-
-    // attachEvent()
-    // jQuery - on
 
     /*--------------------------------------------What we have to learn---------------------------------------*/
     // type, timestamp, defaultPrevented
@@ -35,25 +31,30 @@
     // clientX, clientY, screenX, screenY
     // altkey, ctrlkey, shiftkey, keyCode
 
+    document.getElementById('owl').onclick = function(){                         // features are low
+        alert("owl clicked")
+    }
+
     document.getElementById('images').addEventListener('click', function(e){     // very powerfull than click
         console.log("clicked inside the ul");
-    }, false)                     // Event propogation => event bubling, event capturing
+    }, false)                                                                    // {false/true}Event propogation => event bubling, event capturing
 
     document.getElementById('owl').addEventListener('click', function(e){
         console.log("owl clicked");
         e.stopPropagation()            // it will stop propogation 
-    }, false)    // if we click on owl then first it will clicked on owl and then ul but if we change event propogation to true then it will act as reverse
+    }, false)                          /* if we click on owl then in our console it will show that first it will click on owl and then ul 
+                                          but if we change event propogation to true then it will act as reverse */
     
     document.getElementById('google').addEventListener('click',function(e){
-        e.preventDefault();       
-        e.stopPropagation()
+        e.preventDefault();        // the browser will no longer navigate to Google when the link is clicked.
+        e.stopPropagation()        // This stops the event from propagating or "bubbling up" through the DOM. and and doesn't affect any parent elements.
         console.log("google clicked");
     }, false)
    
 
     /*--------------------------------------------Example- onclick all images should remove----------------------------------------*/
     document.querySelector('#images').addEventListener('click', function(e){
-        console.log(e.target.tagName);          // targenting parent 
+        console.log(e.target.tagName);          // targeting parent 
         if (e.target.tagName === 'IMG') {
             console.log(e.target.id);
             let removeIt = e.target.parentNode

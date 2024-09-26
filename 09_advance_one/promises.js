@@ -96,7 +96,9 @@ async function getAllUsers(){
 getAllUsers()
 
 
-// fatch 2nd method
+// fetch 2nd method => fetch api was there but before 2022 it was not merge with node, it is the global fetch() method startst the promise of fetching a resource
+// from the network returning a promise which js fulfilled once the response is available.
+// fetch has special call back task queue known as microtask queue which will execute before async await
 fetch('https://api.github.com/users/hiteshchoudhary')
 .then((response) => {
     return response.json()

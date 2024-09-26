@@ -28,54 +28,65 @@
     </div>
 </body>
      <script>
-        document.getElementById('title').id   // it means 1st select by id and then what is the value of id
-        document.getElementById('title').className // will give className
-        document.getElementById('title').getAttribute('class')   // will give what is the value of class attribute
-        document.getElementById('title').setAttribute('class', 'test')  // always override and now value of class will be test
+        /*--------------------------------------------DOM-----------------------------------------------
+        => Document Object Model. It is a programming interface for web documents that represents the structure of the webpage as a tree of objects.
+        => Each element in the HTML document, like headings, paragraphs, images, and links, becomes a node in this tree, and JavaScript can interact with 
+        these nodes.*/
+        /*---------------------------------selection by id---------------------------------------------*/
+        document.getElementById('title').id                  // it means 1st select by id and then we can access the value of id by .id
+        document.getElementById('title').className           // will give value of className
+        document.getElementById('title').getAttribute('class')          // will give the value of class attribute => heading
+        document.getElementById('title').setAttribute('class', 'test')  // always override and now the value of class will be test
         document.getElementById('title')
 
-        cons title = document.getElementById('title')
-        title.style.backgroundColor = 'green'
+        const title = document.getElementById('title')
+        title.style.backgroundColor = 'green'                 // after selecting the Elements now we can change them
         title.style.padding = '15px'
         title.style.borderRadius = '5px'
 
-
-        title.textContent  // shows visible and hidden text also   => DOM learning on Chai aur code test text
-        title.innerHTML    // give complete html value             => DOM learning on Chai aur code <span style="display: none;">test text</span>
-        title.innerText    // only shows visible text              => 'DOM learning on Chai aur code'
+        title.textContent  // shows visible and hidden text of the element   => DOM learning on Chai aur code test text
+        title.innerHTML    // give complete html value                       => DOM learning on Chai aur code <span style="display: none;">test text</span>
+        title.innerText    // only shows visible text                        => 'DOM learning on Chai aur code'
 
         document.getElementByClssName('test')      // html collection will get
-        document.querySelector('h2')               // 1st h2 will get
 
+        
+        /*---------------------------------selection by query---------------------------------------------*/
+        document.querySelector('h2')               // 1st h2 will get 
         document.querySelector('#title')           // can select id with #id
         document.querySelector('.heading')         // can select class with .className
-        document.querySelector('p:first-child')
+        document.querySelector('p:first-child')    // can select specific child 
         document.querySelector('input[type= 'password']')
+
         
-        const myul = document.querySelector('ul')
-        myul.querySelelctor('li')
-        const turnGreen = myul.querySelector('li')
-        turnGreen.style.backgroundColor = 'green'
+         /*------------------------------------Example - query selector---------------------------------------*/
+        const myul = document.querySelector('ul')          // ul element will be selected 
+        const turnGreen = myul.querySelector('li')         // now after ul it will select list within element
+        turnGreen.style.backgroundColor = 'green'          // now we can change the style of list
         turnGreen.style.padding = '10px'
-        turnGreen.innerText = 'five'
+        turnGreen.innerText = 'five'                       // now we can change the text of list
 
-        
-        const tempLiList = document.querySelectorAll('li')                 // all list will be selected => NodeList 
+         
+        /*------------------------------------Example - query selector---------------------------------------*/
+        const tempLiList = document.querySelectorAll('li')   // all list will be selected => NodeList 
         tempLiList.style.color = 'green'                     // can't do directly because in NodeList there are so many elements
-        tempLiList[0].style.color = 'green'
+        tempLiList[0].style.color = 'green'                  // Now we can change the list style with there indexing
 
-        const myH1 = document.querySelectorAll('h1')
-        myH1[0].style.color = 'green'
 
-        tempLiList.forEach(function (l) {
-            l.style.backgroundColor = 'green'
+        /*------------------------------------Example 2 - query selector---------------------------------------*/
+         tempLiList.forEach(function (l) {                       
+            l.style.backgroundColor = 'green'                // entire list element will be change with forEach mehtod
         })
 
-        document.getElementsByClassName('list-item')       // HTMLCollection will get and can't access with forEach
-        const myConvertedArray = Array.from(tempClassList)                          // convert into array
+
+        /*------------------------------------Example 3 - query selector---------------------------------------*/
+        const myH1 = document.querySelectorAll('h1')         
+        myH1[0].style.color = 'green'
+
+        document.getElementsByClassName('list-item')             // HTMLCollection will get and can't access with forEach
+        const myConvertedArray = Array.from(tempClassList)       // so we have to convert into array
         myConvertedArray.forEach(function(li){
             li.style.color = 'orange'
         })
-         
     </script>
 </html>

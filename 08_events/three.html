@@ -11,15 +11,16 @@
     <button id="stop">Stop</button>
 </body>
 <script>
-    /*--------------------------------------------setInterval()-------------------------------------------*/
+    /*--------------------------------------------setInterval()-------------------------------------------
+    => is used to repeatedly execute a piece of code or function after a fixed time interval (in milliseconds), over and over until it is stopped.*/
     const sayDate = function(str){
         console.log(str, Date.now());
     }
+    const intervalId = setInterval(sayDate, 1000, "hi")     // call each second
 
-    const intervalId = setInterval(sayDate, 1000, "hi")
 
-
-    /*--------------------------------------------clearInterval()-------------------------------------------*/
+    /*--------------------------------------------clearInterval()-------------------------------------------
+    =>  used to stop the execution of a function that was started by setInterval()*/
     clearInterval(intervalId)
 </script>
 </html>

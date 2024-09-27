@@ -1,3 +1,4 @@
+// lecture is about object with new keyword
 // 1st prototype => function can refer to object
 // classes, new , this all comes from prototype and js have prototype behaviour means it will try to give methods which you are require.
 function multipleBy5(num){

@@ -1,10 +1,12 @@
+/*-----------------------------------------------Can we change the value of PI------------------------------------*/
+console.log(Math.PI);   
+Math.PI = 5                    // can't change directly the value of PI
+console.log(Math.PI);
+
+
 const descripter = Object.getOwnPropertyDescriptor(Math, "PI")
+console.log(descripter);
 
-// console.log(descripter);
-
-// console.log(Math.PI);
-// Math.PI = 5
-// console.log(Math.PI);
 
 const chai = {
     name: 'ginger chai',
@@ -16,7 +18,7 @@ const chai = {
     }
 }
 
-console.log(Object.getOwnPropertyDescriptor(chai, "name"));
+console.log(Object.getOwnPropertyDescriptor(chai, "name"));       // 
 
 Object.defineProperty(chai, 'name', {
     //writable: false,
@@ -26,9 +28,8 @@ Object.defineProperty(chai, 'name', {
 
 console.log(Object.getOwnPropertyDescriptor(chai, "name"));
 
-for (let [key, value] of Object.entries(chai)) {
+for (let [key, value] of Object.entries(chai)) {            // can't do loop directly so go with iterate entries
     if (typeof value !== 'function') {
-        
         console.log(`${key} : ${value}`);
     }
 }

@@ -1,7 +1,6 @@
-// ES6
-
+// after ES6
 class User {
-    constructor(username, email, password){
+    constructor(username, email, password){   // when object will initialize through class then constructor will call
         this.username = username;
         this.email = email;
         this.password = password

@@ -14,9 +14,8 @@
             this.library = "React"
             this.server = "https://localhost:300"
 
-            //requirement
-            document
-                .querySelector('button')
+            //requirement => whenever page will load and object will make then button refference should get
+            document.querySelector('button')
                 .addEventListener('click', this.handleClick.bind(this))
 
         }

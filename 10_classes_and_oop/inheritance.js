@@ -8,9 +8,9 @@ class User {
     }
 }
 
-class Teacher extends User{
+class Teacher extends User{                  
     constructor(username, email, password){
-        super(username)
+        super(username)               // user 
         this.email = email
         this.password = password
     }

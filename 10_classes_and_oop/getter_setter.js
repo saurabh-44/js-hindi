@@ -4,11 +4,11 @@ class User {
         this.password = password
     }
 
-    get email(){
+    get email(){  // if anyone wants to get the email then what we have to return
         return this._email.toUpperCase()
     }
     set email(value){
-        this._email = value
+        this._email = value                    // email is override
     }
 
     get password(){

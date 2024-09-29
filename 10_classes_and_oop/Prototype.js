@@ -1,5 +1,5 @@
 // javasript has prototype behaviour
-/*-----------------------------we are injecting a method to object which function can also access------------------------------*/
+/* 3-----------------------------we are injecting a method to object which function can also access------------------------------*/
 let myHeros = ["thor", "spiderman"]
 let heroPower = {
     thor: "hammer",

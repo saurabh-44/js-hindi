@@ -1,4 +1,4 @@
-/* 9-----------------------------------------------getter setter----------------------------------------------
+/* 10-----------------------------------------------getter setter----------------------------------------------
 => getters and setters are special methods that allow you to control how properties of an object are accessed and updated. 
 => They provide a more flexible way to define how properties behave without directly accessing them, allowing for extra logic to be executed during getting or setting.
 => Getters: Methods that retrieve (or "get") the value of a property. or returns a computed or processed value when accessing the property.

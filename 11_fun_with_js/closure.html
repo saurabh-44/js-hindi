@@ -10,7 +10,11 @@
     <button id="green">Green</button>
 </body>
     <script>
-    /*--------------------------------------------Lexical Scope--------------------------------------------*/
+    /*--------------------------------------------Lexical Scope--------------------------------------------
+    => Lexical scope refers to the region in code where a variable is defined. 
+    => the scope of a variable is determined by its position in the source code, meaning inner functions can access variables defined in their outer scope 
+    (lexical environment). 
+    => outer functions cannot access variables defined inside their inner functions.*/
     function init() {
         let name = "Mozilla"; 
         function displayName() {
@@ -21,15 +25,15 @@
     init();
 
     function outer(){
-        let username = "hitesh"
+        let username = "saurabh"                  // Outer scope variable
         console.log("OUTER", secret);
         function inner(){
-            let secret = "my123"
+            let secret = "my123"                  // Inner scope variable  
             console.log("inner", username);
         }
         function innerTwo(){
-            console.log("innerTwo", username);
-            console.log(secret);
+            console.log("innerTwo", username);    // InnerTwo can access 'username'
+            console.log(secret);                  // Error because 'secret' is in the scope of 'inner', not 'outer'
         }
         inner()
         innerTwo()
@@ -39,14 +43,16 @@
     console.log("TOO OUTER", username);
 
 
-    /*------------------------------------------------Closure------------------------------------------------*/
+    /*------------------------------------------------Closure------------------------------------------------
+    => when a function "remembers" the variables from its outer scope, even after the outer function has finished executing.
+    => a closure gives you access to an outer function’s scope from an inner function, even after the outer function has returned.*/
     function makeFunc() {
         const name = "Mozilla";
         function displayName() {
             console.log(name);
         }
-        return displayName;               /* if we return then on that calling to the makeFunc it will return all the fucntion as well as outer function variable 
-                                             within lexical scope*/
+        return displayName;            /* if we return then on that calling to the makeFunc it will return all the fucntion as well as outer function variable 
+                                          within lexical scope*/
     }
 
     const myFunc = makeFunc();
@@ -54,6 +60,7 @@
 
     </script>
     <script>
+        
         /*---------------------------------------------------Example------------------------------------------------*/
         document.getElementById("orange").onclick = function(){
             document.body.style.backgroundColor = `orange`
@@ -71,9 +78,11 @@
                 document.body.style.backgroundColor = `${color}`
             }
         }
-
         document.getElementById('orange').onclick = clickHandler("orange")
         document.getElementById('green').onclick = clickHandler("green")
-
+        
+        /*In this code, the clickHandler function creates a closure. The inner function, which changes the background color, "remembers" the color passed to 
+        clickHandler. Even after the clickHandler function has finished, the returned inner function still has access to the color variable.
+        When a button is clicked, it triggers the closure and changes the background color based on the captured value.*/
     </script>
 </html>

@@ -1,4 +1,4 @@
-// object based get set
+/* 12------------------------------------------- object based get set-------------------------------------------------*/
 const User = {
     _email: 'h@hc.com',                          // Private-like property to store the email (underscore is a convention for "private" properties)
     _password: "abc",

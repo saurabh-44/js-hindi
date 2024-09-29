@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------Prototype--------------------------------------------------
+/* 2-------------------------------------------------------------Prototype--------------------------------------------------
 => prototype is a property that allows you to add properties or methods to an object’s constructor function, which can then be shared across all instances 
 of that object. 
 => Every function in JavaScript automatically has a prototype property, which is an object that holds methods and properties shared by all instances 

@@ -1,4 +1,4 @@
-/*---------------------------------------------Comes after ES6-----------------------------------------
+/* 5---------------------------------------------Comes after ES6-----------------------------------------
 => Cleaner and more readable.
 => Internally, they still work using prototypes, but the syntax is more intuitive for developers coming from class-based languages like Java or C++.*/
 class User {

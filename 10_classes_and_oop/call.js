@@ -31,4 +31,4 @@ console.log(chai);
 /*Key Heiglights
 => call() is used to invoke a function with a specific this value. In this case, it’s used to run the SetUsername function within the context of the createUser object.
 => this binding: Using call(), the this in SetUsername refers to the object being created by createUser, so any changes made inside SetUsername affect that object.
-=> The new keyword ensures that a new object is created, and this inside the createUser function refers to this new object.*/
+=> The new keyword ensures that a new object is created, and this inside the createUser function refers to this new object..*/

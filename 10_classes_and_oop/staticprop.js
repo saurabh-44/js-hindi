@@ -27,6 +27,6 @@ of the class (iphone). Static methods can only be called directly on the class i
 (e.g., User.createId() or Teacher.createId() if Teacher had its own static method or inherited one).*/
 
 console.log(User.createId());     // Output: 123 => To correctly access the createId() static method, you should call it like this.
-console.log(Teacher.createId());  // Output: 123 => If you want to add or use a static method in the Teacher class, you would do the same.
+console.log(Teacher.createId());  // Output: 123 => If you want to add or use a static method in the Teacher class, you would do the same...
 
 

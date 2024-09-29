@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,13 @@
     <button>Button Clicked</button>
 </body>
 <script>
-    class React {
+    /* 8------------------------------------------bind()------------------------------------------
+    => bind() method is used to create a new function that, when called, has its this keyword set to the provided value. 
+    This is particularly useful when working with event handlers or when you want to ensure that the context (this) remains consistent, 
+    even when passing methods around.
+    => bind() ensures that the method's this context refers to the correct object 
+    => It's commonly used in event handlers and when passing methods as callbacks, where the default behavior of this might change due to the calling context.*/
+    class React {               //  defines a constructor
         constructor(){
             this.library = "React"
             this.server = "https://localhost:300"
@@ -17,14 +24,16 @@
             //requirement => whenever page will load and object will make then button refference should get
             document.querySelector('button')
                 .addEventListener('click', this.handleClick.bind(this))
-
+            /* Without using bind(), when the button is clicked, the this keyword inside handleClick() would refer to the button element itself because of how event handlers 
+            work in JavaScript. Event handlers typically set this to the element that triggered the event (in this case, the button).*/
         }
         handleClick(){
             console.log("button clicked");
-            console.log(this.server);
+            console.log(this.server);                // this has been bound to the instance of React via bind().
         }
     }
-
-    const app = new React()
+    const app = new React()    /* This line creates a new instance of the React class. When the object is created, the constructor is executed, 
+                                  and the event listener is attached to the button. */
 </script>
 </html>
+  
